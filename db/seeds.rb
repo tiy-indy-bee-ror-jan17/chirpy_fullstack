@@ -11,7 +11,8 @@
   user = User.create!(
     username: Faker::Internet.user_name(nil, %w(-)),
     bio: Faker::TwinPeaks.quote,
-    avatar: Faker::Avatar.image
+    avatar: Faker::Avatar.image,
+    password: Faker::Internet.password
   )
 
   rand(10..50).times do
