@@ -41,7 +41,11 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'simple_form'
 gem 'rails_12factor', group: :production
-
+gem 'carrierwave'
+gem 'fog-aws'
+gem "figaro"
+gem 'mini_magick'
+gem 'cloudinary'
 
 
 # Use Capistrano for deployment

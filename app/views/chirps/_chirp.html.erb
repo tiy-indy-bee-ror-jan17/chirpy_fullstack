@@ -1,7 +1,7 @@
 <div class="media">
   <div class="media-left">
     <%= link_to chirp.user do %>
-      <%= image_tag chirp.user.avatar, class: "media-object img-circle" %>
+      <%= image_tag chirp.user.persona, class: "media-object img-circle" %>
     <% end %>
   </div>
   <div class="media-body">
@@ -17,4 +17,15 @@
       <% end %>
     </strong>
   </div>
+  <% if chirp.photo? %>
+    <div class="media-right photo">
+      <%= image_tag chirp.photo.versions[:thumb].url, class: "img-responsive", alt: chirp.body %>
+    </div>
+  <% else %>
+    <div class="media-right">
+      <p>
+        No photo.
+      </p>
+    </div>
+  <% end %>
 </div>

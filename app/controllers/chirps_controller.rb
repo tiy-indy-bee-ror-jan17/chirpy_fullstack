@@ -33,7 +33,7 @@ class ChirpsController < ApplicationController
 
   def chirp_params
     # {chirp: {user_id: , body:}}
-    params.require(:chirp).permit(:body)
+    params.require(:chirp).permit(:body, :photo)
   end
 
   def is_owner

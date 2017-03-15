@@ -3,7 +3,7 @@
     <!-- Main -->
     <div class="row">
       <div class="col-md-3">
-        <%= image_tag @user.avatar, class: "img-responsive" %>
+        <%= image_tag @user.persona, class: "img-responsive" %>
         <% if current_user == @user %>
           <%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-primary" %>
         <% end %>

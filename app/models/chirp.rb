@@ -1,6 +1,8 @@
 class Chirp < ApplicationRecord
   belongs_to :user
 
+  mount_uploader :photo, ChirpPhotoUploader
+
   delegate :avatar, to: :user
 
   default_scope { order(created_at: :desc) }
