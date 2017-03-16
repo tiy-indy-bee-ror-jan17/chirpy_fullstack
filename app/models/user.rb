@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :chirps
+  has_many :comments, as: :commentable
+  has_many :written_comments, class_name: "Comment"
   has_secure_password
 
   mount_uploader :profile_photo, UserAvatarUploader

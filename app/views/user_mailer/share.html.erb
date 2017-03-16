@@ -1,0 +1,7 @@
+<h1>This awesome chirp</h1>
+
+<%= simple_format @chirp.body %>
+
+<h6>Posted by: <%= @chirp.user.username %></h6>
+
+<%= link_to "See more", chirp_url(@chirp) %>

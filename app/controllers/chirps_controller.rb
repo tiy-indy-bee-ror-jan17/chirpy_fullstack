@@ -29,6 +29,22 @@ class ChirpsController < ApplicationController
     redirect_to :root
   end
 
+  def shares
+    @chirp = Chirp.find(params[:id])
+  end
+
+  def sender
+    @chirp = Chirp.find(params[:id])
+    if params[:share][:email].blank?
+      flash[:warning] = "You need to supply an email address to share with"
+      render :shares
+    else
+      UserMailer.share(@chirp, params[:share][:email]).deliver
+      flash[:success] = "That thing is _shared_, yo."
+      redirect_to @chirp # chirp_path(@chirp)
+    end
+  end
+
   private
 
   def chirp_params

@@ -1,0 +1,14 @@
+<ul class="media-list">
+  <li class="media">
+    <div class="media-left">
+      <%= link_to comment.user do %>
+        <%= image_tag comment.user.persona(:thumbnail) %>
+      <% end %>
+    </div>
+    <div class="media-body">
+      <%= simple_format comment.body %>
+      <%= render partial: "comments/form", locals: {object: comment} %>
+      <%= render comment.comments %>
+    </div>
+  </li>
+</ul>
