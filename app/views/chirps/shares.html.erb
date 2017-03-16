@@ -1,0 +1,6 @@
+<%= render @chirp %>
+
+<%= simple_form_for :share do |f| %>
+  <%= f.input :email %>
+  <%= f.button :submit, "Share this!", class: "btn btn-primary" %>
+<% end %>

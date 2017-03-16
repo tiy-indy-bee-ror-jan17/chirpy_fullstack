@@ -1,0 +1,9 @@
+<!-- chirp_comments_path(object), if object is a chirp -->
+<!-- user_comments_path(object), if object is a user -->
+<!-- comment_comments_path(object), if object is a comment -->
+<%= simple_form_for [object, Comment.new] do |f| %>
+
+  <%= f.input :body %>
+  <%= f.button :submit %>
+
+<% end %>
